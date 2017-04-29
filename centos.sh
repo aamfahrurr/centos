@@ -32,6 +32,9 @@ wget http://prdownloads.sourceforge.net/webadmin/webmin-1.831-1.noarch.rpm
 yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
 rpm -U webmin-1.831-1.noarch.rpm
 
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+service webmin restart
+
 # Install Squid
 wget https://raw.githubusercontent.com/aamfahrurr/centos/master/squid.sh && bash squid.sh
 
@@ -42,7 +45,3 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 service sshd restart
 service dropbear restart
 service webmin restart
-
-# info
-clear
-AAM FAHRUR
