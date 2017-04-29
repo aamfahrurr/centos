@@ -32,6 +32,9 @@ wget http://prdownloads.sourceforge.net/webadmin/webmin-1.831-1.noarch.rpm
 yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
 rpm -U webmin-1.831-1.noarch.rpm
 
+# Install Squid
+wget https://raw.githubusercontent.com/aamfahrurr/centos/master/squid.sh && bash squid.sh
+
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
