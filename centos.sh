@@ -38,13 +38,6 @@ echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
 
-# install squid
-yum -y install squid
-wget -O /etc/squid/squid.conf "https://raw.github.com/arieonline/autoscript/master/conf/squid-centos.conf"
-sed -i $MYIP2 /etc/squid/squid.conf;
-service squid restart
-chkconfig squid on
-
 # install webmin
 cd
 wget http://prdownloads.sourceforge.net/webadmin/webmin-1.670-1.noarch.rpm
