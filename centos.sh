@@ -9,8 +9,16 @@ cd
 # install wget and curl
 yum -y install wget curl
 
-# update
+# install webmin
 yum -y update
+yum -y install gcc*
+yum -y install  libpcap*
+yum -y install wget
+wget http://prdownloads.sourceforge.net/webadmin/webmin-1.831-1.noarch.rpm
+yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
+rpm -U webmin-1.831-1.noarch.rpm
+
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 
 # install dropbear
 yum -y update
@@ -23,18 +31,6 @@ echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
 
-# install webmin
-yum -y update
-yum -y install gcc*
-yum -y install  libpcap*
-yum -y install wget
-wget http://prdownloads.sourceforge.net/webadmin/webmin-1.831-1.noarch.rpm
-yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-rpm -U webmin-1.831-1.noarch.rpm
-
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-service webmin restart
-
 # Install Squid
 wget https://raw.githubusercontent.com/aamfahrurr/centos/master/squid.sh && bash squid.sh
 
@@ -42,6 +38,5 @@ wget https://raw.githubusercontent.com/aamfahrurr/centos/master/squid.sh && bash
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # finalisasi
-service sshd restart
 service dropbear restart
 service webmin restart
