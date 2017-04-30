@@ -39,7 +39,6 @@ chkconfig squid on
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# finalisasi
-service webmin restart
-service dropbear restart
-service squid restart
+# info
+clear
+echo "SELESAI"
