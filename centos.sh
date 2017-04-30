@@ -34,9 +34,12 @@ chkconfig dropbear on
 # Install Squid
 wget https://raw.githubusercontent.com/aamfahrurr/centos/master/squid.sh && bash squid.sh
 
+chkconfig squid on
+
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # finalisasi
 service dropbear restart
+service squid restart
 service webmin restart
