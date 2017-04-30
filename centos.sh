@@ -38,7 +38,3 @@ chkconfig squid on
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-
-# info
-clear
-echo "SELESAI"
