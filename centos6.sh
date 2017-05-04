@@ -33,8 +33,6 @@ chkconfig dropbear on
 
 # Install Squid
 wget https://raw.githubusercontent.com/aamfahrurr/centos/master/squid.sh && bash squid.sh
-service squid restart
-chkconfig squid on
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
